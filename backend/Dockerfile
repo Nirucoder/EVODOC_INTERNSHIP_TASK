@@ -13,6 +13,8 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./app ./app
+COPY download_data.py .
+COPY train.py .
 COPY model_weights.pth* ./
 COPY startup.sh .
 COPY .env* .
