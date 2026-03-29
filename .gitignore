@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+backend/venv/
+
+# Environment secrets
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Large model files (download/train separately)
+backend/model_weights.pth
+backend/data/
+
+# Test images at root
+*.jpg
+*.png
+*.jpeg
