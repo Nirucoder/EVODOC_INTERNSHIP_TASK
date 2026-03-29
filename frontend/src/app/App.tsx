@@ -11,6 +11,8 @@ interface AnalysisData {
   ram_mb: number;
 }
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 export default function App() {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [classificationResults, setClassificationResults] = useState<AnalysisData | null>(null);
@@ -20,7 +22,7 @@ export default function App() {
 
   const fetchHistory = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/history');
+      const res = await axios.get(`${API_URL}/history`);
       setHistory(res.data);
     } catch (error) {
       console.error("Failed to fetch history", error);
@@ -49,7 +51,7 @@ export default function App() {
     formData.append('file', selectedFile);
 
     try {
-      const response = await axios.post('http://localhost:8000/classify', formData);
+      const response = await axios.post(`${API_URL}/classify`, formData);
       // This 'response.data' now contains exactly what your UI displays
       setClassificationResults(response.data); 
       await fetchHistory();

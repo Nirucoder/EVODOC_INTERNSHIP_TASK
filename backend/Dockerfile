@@ -13,8 +13,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./app ./app
-COPY model_weights.pth .
-COPY .env .
+COPY model_weights.pth* ./
+COPY startup.sh .
+COPY .env* .
+RUN chmod +x startup.sh
 
-# 3. Run with 4 workers to handle traffic, but limited memory
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]
+# Start: auto-train if weights missing, then serve
+CMD ["bash", "startup.sh"]
