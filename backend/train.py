@@ -12,7 +12,7 @@ from torchvision import datasets, models, transforms
 DATA_DIR = "data"
 MODEL_SAVE_PATH = "model_weights.pth"
 BATCH_SIZE = 2
-EPOCHS = 30  # High-intensity fine-tuning on binarized data
+EPOCHS = 5  # Reduced for faster first-time deployment
 LEARNING_RATE = 0.0005
 
 # 2. Preprocessing with Binarization Logic (The "Base Points" approach)
