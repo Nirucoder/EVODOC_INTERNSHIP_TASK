@@ -11,7 +11,7 @@ from torchvision import datasets, models, transforms
 # 1. Config
 DATA_DIR = "data"
 MODEL_SAVE_PATH = "model_weights.pth"
-BATCH_SIZE = 4
+BATCH_SIZE = 2
 EPOCHS = 30  # High-intensity fine-tuning on binarized data
 LEARNING_RATE = 0.0005
 
