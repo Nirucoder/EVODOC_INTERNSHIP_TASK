@@ -1,4 +1,4 @@
-# 🧠 EVODOC — AI-Powered Medical Document Classifier
+# 🧠 AI-Powered Medical Document Classifier
 
 > **Hackathon Submission** | Full-stack AI system that classifies medical documents in real-time using a fine-tuned Small Language Model (SLM), with live RAM monitoring and full PostgreSQL persistence.
 
